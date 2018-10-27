@@ -1,1 +1,1 @@
-# gifTastic
+# TriviaGame
