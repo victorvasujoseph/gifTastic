@@ -28,13 +28,14 @@ var createButtons = function(btnName){
 
     var btn = $("<button>");
     btn.attr("id","id-" + btnName);
+    btn.css("margin","5px");
     btn.attr("type","button");
     btn.addClass("btn btn-primary");
     btn.val(btnName);
     btn.text(btnName);
 
     btn.on('click', function(){
-        clear();
+        clear();    
         var queryString = createQueryString($(this).text());
         console.log(queryString);
         getGifs(queryString);
@@ -70,6 +71,8 @@ var getGifs = function(queryURL){
 var addImageDiv = function(data){ 
     data.forEach(function(val){
         var imgDiv = $("<div>"); 
+        imgDiv.css("text-align","center");
+        imgDiv.css("margin","5px");
         imgDiv.append(createRating(val));
         imgDiv.append(createImage(val));
         $('#container-image').append(imgDiv);
@@ -78,7 +81,7 @@ var addImageDiv = function(data){
 
 var createRating = function(data){
     var p = $("<p>");
-    p.text(data.rating);
+    p.text("rating : " +data.rating);
     return p;
 }
 
