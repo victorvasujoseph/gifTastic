@@ -37,7 +37,6 @@ var createButtons = function(btnName){
     btn.on('click', function(){
         clear();    
         var queryString = createQueryString($(this).text());
-        console.log(queryString);
         getGifs(queryString);
     });
 
@@ -51,8 +50,8 @@ $('#btn-submit').on('click', function(event) {
     event.preventDefault();
     clear();
     var newAnimal = $('#text-box').val();
+    $('#text-box').val('');
     topics.push(newAnimal);
-    console.log(topics); 
     createButtons(newAnimal);
 });
 
