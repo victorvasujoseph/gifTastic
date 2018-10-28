@@ -73,6 +73,7 @@ var addImageDiv = function(data){
         var imgDiv = $("<div>"); 
         imgDiv.css("text-align","center");
         imgDiv.css("margin","5px");
+        imgDiv.addClass("border border-primary");
         imgDiv.append(createRating(val));
         imgDiv.append(createImage(val));
         $('#container-image').append(imgDiv);
@@ -86,9 +87,26 @@ var createRating = function(data){
 }
 
 var createImage = function(data){
+    console.log(data);
     var img = $("<img>");
     img.attr("id",data.id);
-    img.attr("src",data.images.fixed_height.url);
+    img.attr("src",data.images.fixed_height_still.url);
+    img.attr("data-still",data.images.fixed_height_still.url);
+    img.attr("data-animate",data.images.fixed_height.url);
+    img.attr("data-state","still");
+
+    img.on("click", function() {
+    
+        var state = $(this).attr("data-state");
+        if (state === "still") {
+          $(this).attr("src", $(this).attr("data-animate"));
+          $(this).attr("data-state", "animate");
+        } else {
+          $(this).attr("src", $(this).attr("data-still"));
+          $(this).attr("data-state", "still");
+        }
+      });
+      
     return img;
 }
 

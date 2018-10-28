@@ -2,10 +2,23 @@
   display: flex;
   justify-content: flex-start;
   flex-wrap:wrap ;
+  font-family: 'Mali', cursive;
 }
 
 #container-image{
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
+  font-family: 'Mali', cursive;
+}
+
+#btn-div,#text-box,#label,#btn-submit{
+  padding:5px;
+  margin:10px;
+  font-family: 'Mali', cursive;
+
+}
+
+#label{
+  font-size: 30px;
 }
