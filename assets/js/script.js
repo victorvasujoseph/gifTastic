@@ -48,15 +48,16 @@ addButtons();
 $('#btn-submit').on('click', function(event) {
 
     event.preventDefault();
-    // clear();
-    var newAnimal = $('#text-box').val();
+    var newAnimal = $('#text-box').val().trim();
     $('#text-box').val('');
-    topics.push(newAnimal);
-    createButtons(newAnimal);
+    console.log(typeof newAnimal.length);
+    if(newAnimal.length !== 0){
+        topics.push(newAnimal);
+        createButtons(newAnimal);
+    }
 });
 
 var getGifs = function(queryURL){
-    console.log(queryURL);
 
     $.ajax({
         url: queryURL,
