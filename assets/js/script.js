@@ -48,7 +48,7 @@ addButtons();
 $('#btn-submit').on('click', function(event) {
 
     event.preventDefault();
-    clear();
+    // clear();
     var newAnimal = $('#text-box').val();
     $('#text-box').val('');
     topics.push(newAnimal);
