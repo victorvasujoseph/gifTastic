@@ -64,7 +64,6 @@ var getGifs = function(queryURL){
         method: "GET"
       }).then(function(response) {
         addImageDiv(response.data);
-        console.log(response.data);
       });
 }
 
@@ -74,8 +73,8 @@ var addImageDiv = function(data){
         imgDiv.css("text-align","center");
         imgDiv.css("margin","5px");
         imgDiv.addClass("border border-primary");
-        imgDiv.append(createRating(val));
         imgDiv.append(createImage(val));
+        imgDiv.append(createRating(val));
         $('#container-image').append(imgDiv);
     })
 }
